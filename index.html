@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Sumbites</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Pemesanan Dimsum Ayam</h1>
+
+    <div class="menu">
+        <div class="item">
+            <h3>Dimsum Ayam</h3>
+            <p>Rp 12.000 / porsi</p>
+            <input type="number" id="jumlah" min="1" value="1">
+        </div>
+    </div>
+
+    <h2>Total Harga: Rp <span id="total">12000</span></h2>
+
+    <h3>Pilih E-Wallet:</h3>
+    <select id="ewallet" onchange="updatePembayaran()">
+        <option value="">-- Pilih E-Wallet --</option>
+        <option value="gopay">Gopay</option>
+        <option value="ovo">OVO</option>
+        <option value="dana">Dana</option>
+    </select>
+
+    <div id="detail-pembayaran" class="hidden">
+        <h4>Silakan transfer ke:</h4>
+        <p id="info-pembayaran"></p>
+    </div>
+
+    <h3>Upload Bukti Pembayaran:</h3>
+    <input type="file" id="bukti-pembayaran" accept="image/*">
+    <div id="preview"></div>
+
+    <button onclick="pesan()">Pesan Sekarang</button>
+
+    <div id="notifikasi" class="hidden">
+        <p>✅ Pesanan Berhasil! Bukti pembayaran sudah diterima.</p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
